@@ -8,22 +8,26 @@
 </head>
 <body>
     <header>
-        <h1>Bem-vindo ao Controle Financeiro</h1>
-        <p>Desenvolvido por Willian dos Santos</p>
-    
+        <h1>Transações</h1>
+           
         <nav>
             <a href="index.html">Início</a>
-            <a href="deashboard.html"></a>
-            <a href="transactions.html"></a>
-            <a href="reports.html"></a>
-            <a href="setings.html"></a>
+            <a href="deashboard.html">Dashboard</a>
+            <a href="transactions.html">Transações</a>
+            <a href="reports.html">Relatórios</a>
+            <a href="setings.html">Configurações</a>
         </nav>
     </header>
     
     <main>
         <section>
             <h2>Gerenciar Transações</h2>
-            <p>Aqui você pode adicionar, editar e visualizar suas transações</p>
+            <form id="transaction-form"></form>
+                <label for="type">Tipo</label>
+                <select name="type" id="type" required>
+                    <option value="income">Receita</option>
+                    <option value="expense">Despesa</option>
+                </select>
         </section>
     </main>
     
