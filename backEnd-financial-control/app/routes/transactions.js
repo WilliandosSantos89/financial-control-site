@@ -1,25 +1,9 @@
-module.exports = (sequelize, DataTypes) => {
-    const Transaction = sequelize.define('Transaction', {
-        type: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        amount: {
-            type: DataTypes.FLOAT,
-            allowNull: false
-        },
-        category: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        date: {
-            type: DataTypes.DATE,
-            allowNull: false
-        },
-        description: {
-            type: DataTypes.TEXT,
-            allowNull: false
-        }
-    });
-    return Transaction;
-};
+const express = require('express');
+const router = express.Router();
+const transactionController = require('../controllers/transactionController');
+const authMiddleware = require('../middleware/authMiddleware');
+
+router.post('/', authMiddleware, transactionController.createTransaction);
+router.get('/', authMiddleware, transactionController.getTransactions); 
+
+module.exports = router;
